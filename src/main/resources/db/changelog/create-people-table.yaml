@@ -1,0 +1,145 @@
+databaseChangeLog:
+  - changeSet:
+      id: create-people
+      author: Nikolay
+      changes:
+        - createTable:
+            tableName: people
+            columns:
+              - column:
+                  name: id
+                  type: integer
+                  autoIncrement: true
+                  constraints:
+                    primaryKey: true
+                    unique: true
+                    nullable: false
+              - column:
+                  name: human
+                  type: varchar(50)
+                  constraints:
+                    nullable: false
+              - column:
+                  name: age
+                  type: integer
+                  constraints:
+                    nullable: false
+              - column:
+                  name: nationality
+                  type: varchar(50)
+                  constraints:
+                    nullable: false
+              - column:
+                  name: stile
+                  type: varchar(50)
+                  constraints:
+                    nullable: false
+              - column:
+                  name: pank_group_id
+                  type: integer
+  - changeSet:
+      id: add-fk-people
+      author: Nikolay
+      changes:
+        - addForeignKeyConstraint:
+            baseColumnNames: id
+            baseTableName: people
+            constraintName: people_groups_fk
+            deferrable: false
+            initiallyDeferred: false
+            referencedColumnNames: id
+            referencedTableName: groups
+  - changeSet:
+      id: insert-people
+      author: Nikolay
+      changes:
+        - insert:
+            tableName: people
+            columns:
+              - column:
+                  name: human
+                  value: Victor
+              - column:
+                  name: age
+                  value: '25'
+              - column:
+                  name: nationality
+                  value: Belorusian
+              - column:
+                  name: stile
+                  value: Pop
+              - column:
+                  name: pank_group_id
+                  value: '1'
+        - insert:
+            tableName: people
+            columns:
+              - column:
+                  name: human
+                  value: Helen
+              - column:
+                  name: age
+                  value: '28'
+              - column:
+                  name: nationality
+                  value: Polian
+              - column:
+                  name: stile
+                  value: Rock
+              - column:
+                  name: pank_group_id
+                  value: '4'
+        - insert:
+            tableName: people
+            columns:
+              - column:
+                  name: human
+                  value: Olga
+              - column:
+                  name: age
+                  value: '34'
+              - column:
+                  name: nationality
+                  value: Greek
+              - column:
+                  name: stile
+                  value: Hiphop
+              - column:
+                  name: pank_group_id
+                  value: '3'
+        - insert:
+            tableName: people
+            columns:
+              - column:
+                  name: human
+                  value: Jon
+              - column:
+                  name: age
+                  value: '41'
+              - column:
+                  name: nationality
+                  value: American
+              - column:
+                  name: stile
+                  value: Rock
+              - column:
+                  name: pank_group_id
+                  value: '4'
+        - insert:
+            tableName: people
+            columns:
+              - column:
+                  name: human
+                  value: Deni
+              - column:
+                  name: age
+                  value: '29'
+              - column:
+                  name: nationality
+                  value: Briton
+              - column:
+                  name: stile
+                  value: Pop
+              - column:
+                  name: pank_group_id
+                  value: '1'

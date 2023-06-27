@@ -1,0 +1,55 @@
+databaseChangeLog:
+  - changeSet:
+      id: create-album
+      author: Nikolay
+      changes:
+        - createTable:
+            tableName: albums
+            columns:
+              - column:
+                  name: id
+                  type: integer
+                  autoIncrement: true
+                  constraints:
+                    primaryKey: true
+                    unique: true
+                    nullable: false
+              - column:
+                  name: album
+                  type: varchar(50)
+                  constraints:
+                    nullable: false
+  - changeSet:
+      id: insert-album
+      author: Nikolay
+      changes:
+        - insert:
+            tableName: albums
+            columns:
+              - column:
+                  name: album
+                  value: Red
+        - insert:
+            tableName: albums
+            columns:
+              - column:
+                  name: album
+                  value: Black
+        - insert:
+            tableName: albums
+            columns:
+              - column:
+                  name: album
+                  value: White
+        - insert:
+            tableName: albums
+            columns:
+              - column:
+                  name: album
+                  value: Orang
+        - insert:
+            tableName: albums
+            columns:
+              - column:
+                  name: album
+                  value: Gray

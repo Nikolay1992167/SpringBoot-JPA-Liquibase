@@ -1,0 +1,87 @@
+databaseChangeLog:
+  - changeSet:
+      id: create-albums_song_players_list
+      author: Nikolay
+      changes:
+        - createTable:
+            tableName: albums_song_players_list
+            columns:
+              - column:
+                  name: album_id
+                  type: integer
+              - column:
+                  name: song_players_list_id
+                  type: integer
+  - changeSet:
+      id: add-fk-album
+      author: Nikolay
+      changes:
+        - addForeignKeyConstraint:
+            baseColumnNames: album_id
+            baseTableName: albums_song_players_list
+            constraintName: album_song_fk
+            deferrable: true
+            initiallyDeferred: true
+            referencedColumnNames: id
+            referencedTableName: albums
+  - changeSet:
+      id: add-fk-songplayers
+      author: Nikolay
+      changes:
+        - addForeignKeyConstraint:
+            baseColumnNames: song_players_list_id
+            baseTableName: albums_song_players_list
+            constraintName: song_players_fk
+            deferrable: true
+            initiallyDeferred: true
+            referencedColumnNames: id
+            referencedTableName: songplayers
+  - changeSet:
+      id: insert-albums_song_players_list
+      author: Nikolay
+      changes:
+        - insert:
+            tableName: albums_song_players_list
+            columns:
+              - column:
+                  name: album_id
+                  value: '1'
+              - column:
+                  name: song_players_list_id
+                  value: '2'
+        - insert:
+            tableName: albums_song_players_list
+            columns:
+              - column:
+                  name: album_id
+                  value: '2'
+              - column:
+                  name: song_players_list_id
+                  value: '1'
+        - insert:
+            tableName: albums_song_players_list
+            columns:
+              - column:
+                  name: album_id
+                  value: '3'
+              - column:
+                  name: song_players_list_id
+                  value: '5'
+        - insert:
+            tableName: albums_song_players_list
+            columns:
+              - column:
+                  name: album_id
+                  value: '4'
+              - column:
+                  name: song_players_list_id
+                  value: '1'
+        - insert:
+            tableName: albums_song_players_list
+            columns:
+              - column:
+                  name: album_id
+                  value: '5'
+              - column:
+                  name: song_players_list_id
+                  value: '5'

@@ -1,0 +1,55 @@
+databaseChangeLog:
+  - changeSet:
+      id: create-table
+      author: Nikolay
+      changes:
+        - createTable:
+            tableName: groups
+            columns:
+              - column:
+                  name: id
+                  type: integer
+                  autoIncrement: true
+                  constraints:
+                    primaryKey: true
+                    unique: true
+                    nullable: false
+              - column:
+                  name: pankgroup
+                  type: varchar(50)
+                  constraints:
+                    nullable: false
+  - changeSet:
+      id: insert-groups
+      author: Nikolay
+      changes:
+        - insert:
+            tableName: groups
+            columns:
+              - column:
+                  name: pankgroup
+                  value: Sky
+        - insert:
+            tableName: groups
+            columns:
+              - column:
+                  name: pankgroup
+                  value: Sting
+        - insert:
+            tableName: groups
+            columns:
+              - column:
+                  name: pankgroup
+                  value: Amazon
+        - insert:
+            tableName: groups
+            columns:
+              - column:
+                  name: pankgroup
+                  value: Clon
+        - insert:
+            tableName: groups
+            columns:
+              - column:
+                  name: pankgroup
+                  value: Welkin

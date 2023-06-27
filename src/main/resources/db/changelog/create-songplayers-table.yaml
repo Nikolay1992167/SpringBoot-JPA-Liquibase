@@ -1,0 +1,115 @@
+databaseChangeLog:
+  - changeSet:
+      id: create-songplayers
+      author: Nikolay
+      changes:
+        - createTable:
+            tableName: songplayers
+            columns:
+              - column:
+                  name: id
+                  type: integer
+                  autoIncrement: true
+                  constraints:
+                    primaryKey: true
+                    unique: true
+                    nullable: false
+              - column:
+                  name: song
+                  type: varchar(50)
+                  constraints:
+                    nullable: false
+              - column:
+                  name: composer
+                  type: varchar(50)
+                  constraints:
+                    nullable: false
+              - column:
+                  name: poet
+                  type: varchar(50)
+                  constraints:
+                    nullable: false
+              - column:
+                  name: album
+                  type: varchar(50)
+                  constraints:
+                    nullable: false
+  - changeSet:
+      id: insert-songplayers
+      author: Nikolay
+      changes:
+        - insert:
+            tableName: songplayers
+            columns:
+              - column:
+                  name: song
+                  value: Life
+              - column:
+                  name: composer
+                  value: Gudov
+              - column:
+                  name: poet
+                  value: Tishman
+              - column:
+                  name: album
+                  value: Black
+        - insert:
+            tableName: songplayers
+            columns:
+              - column:
+                  name: song
+                  value: Nord
+              - column:
+                  name: composer
+                  value: Alexin
+              - column:
+                  name: poet
+                  value: Tishman
+              - column:
+                  name: album
+                  value: Red
+        - insert:
+            tableName: songplayers
+            columns:
+              - column:
+                  name: song
+                  value: Weather
+              - column:
+                  name: composer
+                  value: Gudov
+              - column:
+                  name: poet
+                  value: Grody
+              - column:
+                  name: album
+                  value: Gray
+        - insert:
+            tableName: songplayers
+            columns:
+              - column:
+                  name: song
+                  value: Sunny
+              - column:
+                  name: composer
+                  value: Alexin
+              - column:
+                  name: poet
+                  value: Bulka
+              - column:
+                  name: album
+                  value: Red
+        - insert:
+            tableName: songplayers
+            columns:
+              - column:
+                  name: song
+                  value: Say
+              - column:
+                  name: composer
+                  value: Brado
+              - column:
+                  name: poet
+                  value: Grody
+              - column:
+                  name: album
+                  value: Gray
