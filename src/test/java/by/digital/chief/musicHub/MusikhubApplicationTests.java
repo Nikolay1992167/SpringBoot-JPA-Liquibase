@@ -1,4 +1,4 @@
-package by.digital.chief.musikhub;
+package by.digital.chief.musicHub;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
