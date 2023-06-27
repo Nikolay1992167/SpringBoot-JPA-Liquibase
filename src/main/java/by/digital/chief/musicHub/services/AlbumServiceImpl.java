@@ -41,7 +41,6 @@ public class AlbumServiceImpl implements AlbumService {
         Album updateAlbum = albumRepository.findById(updateRequestAlbum.getId())
                 .map(album -> {
                     album.setAlbum(updateRequestAlbum.getAlbum());
-                    album.setSongPlayersList(updateRequestAlbum.getSongPlayersList());
                     return album;
                 })
                 .orElseThrow(() -> new ResourceNotFoundException(String.format("Not find album.")));

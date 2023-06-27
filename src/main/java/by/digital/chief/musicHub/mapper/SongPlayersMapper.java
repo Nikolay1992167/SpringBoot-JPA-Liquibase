@@ -14,7 +14,6 @@ public class SongPlayersMapper {
                 .composer(requestSongPlayers.getComposer())
                 .poet(requestSongPlayers.getPoet())
                 .album(requestSongPlayers.getAlbum())
-                .songInstrumentalist(requestSongPlayers.getSongInstrumentalist())
                 .build();
     }
 }

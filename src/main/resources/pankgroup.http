@@ -1,0 +1,24 @@
+###getAllPankGroup
+GET http://localhost:8080/pankgroup/all
+Accept: application/json
+
+###addPankGroup
+POST http://localhost:8080/pankgroup/add
+Content-Type: application/json
+
+{
+  "pankGroup": "Zaraza"
+}
+
+###updatePankGroup
+PUT http://localhost:8080/pankgroup/upd
+Content-Type: application/json
+
+{
+  "id": 1,
+  "pankGroup": "Break"
+}
+
+###deletePankGroup
+DELETE http://localhost:8080/pankgroup/del/1
+Content-Type: application/json

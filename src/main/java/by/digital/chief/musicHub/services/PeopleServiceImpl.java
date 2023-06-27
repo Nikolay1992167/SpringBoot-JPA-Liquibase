@@ -9,6 +9,7 @@ import by.digital.chief.musicHub.entitie.People;
 import by.digital.chief.musicHub.entitie.SongPlayers;
 import by.digital.chief.musicHub.exeptions.ResourceNotFoundException;
 import by.digital.chief.musicHub.mapper.PeopleMapper;
+import by.digital.chief.musicHub.repositories.PankGroupRepository;
 import by.digital.chief.musicHub.repositories.PeopleRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
@@ -21,6 +22,7 @@ import java.util.List;
 public class PeopleServiceImpl implements PeopleService{
     private final PeopleMapper peopleMapper;
     private final PeopleRepository peopleRepository;
+    private final PankGroupRepository pankGroupRepository;
 
     @Override
     public List<ResponsePeople> getAllPeople() {
@@ -70,8 +72,7 @@ public class PeopleServiceImpl implements PeopleService{
                     people.setAge(updateRequestPeople.getAge());
                     people.setNationality(updateRequestPeople.getNationality());
                     people.setStile(updateRequestPeople.getStile());
-                    people.setPankGroup(updateRequestPeople.getGroup());
-                    people.setSongItems(updateRequestPeople.getSongItems());
+                    people.setPankGroup(pankGroupRepository.findById(updateRequestPeople.getIdGroup()).orElseThrow(() -> new ResourceNotFoundException(String.format("Not find pankgroup."))));
                     return people;
                 })
                 .orElseThrow(() -> new ResourceNotFoundException(String.format("Not find people.")));

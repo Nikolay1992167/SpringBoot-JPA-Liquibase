@@ -13,7 +13,6 @@ public class AlbumMapper {
     public Album buildAlbum(RequestAlbum requestAlbum) {
         return Album.builder()
                 .album(requestAlbum.getAlbum())
-                .songPlayersList(requestAlbum.getSongPlayersList())
                 .build();
     }
 }

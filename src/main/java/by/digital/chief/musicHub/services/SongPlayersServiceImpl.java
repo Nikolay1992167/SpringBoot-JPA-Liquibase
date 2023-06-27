@@ -96,7 +96,6 @@ public class SongPlayersServiceImpl implements SongPlayersService {
                     songPlayers.setComposer(updateRequestSongPlayers.getComposer());
                     songPlayers.setPoet(updateRequestSongPlayers.getPoet());
                     songPlayers.setAlbum(updateRequestSongPlayers.getAlbum());
-                    songPlayers.setSongInstrumentalist(updateRequestSongPlayers.getSongInstrumentalist());
                     return songPlayers;
                 })
                 .orElseThrow(() -> new ResourceNotFoundException(String.format("Not find songplayers.")));

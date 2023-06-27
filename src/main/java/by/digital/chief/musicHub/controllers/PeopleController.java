@@ -44,7 +44,7 @@ public class PeopleController{
         peopleServiceImpl.delPeople(id);
     }
 
-    @PutMapping("/upd/{id}")
+    @PutMapping("/upd")
     public void updPeople(@RequestBody UpdateRequestPeople updateRequestPeople) {
         peopleServiceImpl.updPeople(updateRequestPeople);
     }

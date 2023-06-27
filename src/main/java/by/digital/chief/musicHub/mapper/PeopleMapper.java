@@ -23,7 +23,6 @@ public class PeopleMapper {
                 .nationality(requestPeople.getNationality())
                 .pankGroup(pankGroupMapper.buildPankGroup(pankGroupService.getPankGroup(requestPeople.getIdGroup())))
                 .stile(requestPeople.getStile())
-                .songItems(requestPeople.getSongItems())
                 .build();
     }
 }

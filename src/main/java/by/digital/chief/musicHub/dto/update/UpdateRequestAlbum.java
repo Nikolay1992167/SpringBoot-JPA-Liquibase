@@ -1,13 +1,15 @@
 package by.digital.chief.musicHub.dto.update;
 
-import by.digital.chief.musicHub.entitie.SongPlayers;
+import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.NotNull;
+import jakarta.validation.constraints.Size;
 import lombok.Data;
-
-import java.util.List;
 
 @Data
 public class UpdateRequestAlbum {
+    @NotNull
     private long id;
+    @NotBlank
+    @Size(max = 50)
     private String album;
-    private List<SongPlayers> songPlayersList;
 }

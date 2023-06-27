@@ -31,7 +31,7 @@ public class PankGroupController {
         pankGroupServiceImpl.delPankGroup(id);
     }
 
-    @PutMapping("/upd/{id}")
+    @PutMapping("/upd")
     public void updPankGroups(@RequestBody UpdateRequestPankGroup updateRequestPankGroup){
         pankGroupServiceImpl.updPankGroup(updateRequestPankGroup);
     }

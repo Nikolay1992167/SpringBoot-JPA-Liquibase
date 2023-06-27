@@ -32,7 +32,7 @@ public class AlbumController {
         albumServiceImpl.delAlbum(id);
     }
 
-    @PutMapping("/upd/{id}")
+    @PutMapping("/upd")
     public void updAlbum(@RequestBody UpdateRequestAlbum updateRequestAlbum) {
         albumServiceImpl.updAlbum(updateRequestAlbum);
     }

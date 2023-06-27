@@ -53,7 +53,7 @@ public class SongPlayersController {
         songPlayersServiceImpl.delSongPlayers(id);
     }
 
-    @PutMapping("/upd/{id}")
+    @PutMapping("/upd")
     public void updSongPlayers(@RequestBody UpdateRequestSongPlayers updateRequestSongPlayers) {
         songPlayersServiceImpl.updSongPlayers(updateRequestSongPlayers);
     }

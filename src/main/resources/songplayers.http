@@ -1,0 +1,46 @@
+###getAllSongPlayers
+GET http://localhost:8080/songplayers/all
+Accept: application/json
+
+###getPeopleBySong
+GET http://localhost:8080/songplayers/getpeoplebysong/Tree
+Accept: application/json
+
+###getAlbumSong
+GET http://localhost:8080/songplayers/getalbumbysong/Life
+Accept: application/json
+
+###getSongByComposer
+GET http://localhost:8080/songplayers/getsongbycomposer/Gudov
+Accept: application/json
+
+###getSongByPoet
+GET http://localhost:8080/songplayers/getsongbypoet/Tishman
+Accept: application/json
+
+###addSongPlayers
+POST http://localhost:8080/songplayers/add
+Content-Type: application/json
+
+{
+  "song": "Bhv",
+  "composer": "Malok",
+  "poet": "Genius",
+  "album": "Black"
+}
+
+###updateSongPlayers
+PUT http://localhost:8080/songplayers/upd
+Content-Type: application/json
+
+{
+  "id": 2,
+  "song": "Puky",
+  "composer": "Mihalkov",
+  "poet": "Stethkin",
+  "album": "Orange"
+}
+
+###deleteSongPlayers
+DELETE http://localhost:8080/songplayers/del/2
+Content-Type: application/json

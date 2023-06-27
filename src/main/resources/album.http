@@ -1,0 +1,24 @@
+###getAllAlbum
+GET http://localhost:8080/album/all
+Accept: application/json
+
+###addAlbum
+POST http://localhost:8080/album/add
+Content-Type: application/json
+
+{
+  "album": "Crazy"
+}
+
+###updateAlbum
+PUT http://localhost:8080/album/upd
+Content-Type: application/json
+
+{
+  "id": 2,
+  "album": "End"
+}
+
+###deleteAlbum
+DELETE http://localhost:8080/album/del/1
+Content-Type: application/json

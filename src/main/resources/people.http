@@ -1,0 +1,40 @@
+###getAllPeople
+GET http://localhost:8080/people/all
+Accept: application/json
+
+###getByHuman
+GET http://localhost:8080/people/getbyhuman/Victor
+Accept: application/json
+
+###getBySongByHuman
+GET http://localhost:8080/people/getsongbyhuman/Sara
+Accept: appliфcation/json
+
+###addPeople
+POST http://localhost:8080/people/add
+Content-Type: application/json
+
+{
+  "human": "Dima",
+  "age": 35,
+  "nationality": "Chines",
+  "idGroup": 2,
+  "stile": "Pop"
+}
+
+###updatePeople
+PUT http://localhost:8080/people/upd
+Content-Type: application/json
+
+{
+  "id": 3,
+  "human": "Nazar",
+  "age": 18,
+  "nationality": "Belarusian",
+  "idGroup": 2,
+  "stile": "Pop"
+}
+
+###deletePeople
+DELETE http://localhost:8080/people/del/1
+Content-Type: application/json
