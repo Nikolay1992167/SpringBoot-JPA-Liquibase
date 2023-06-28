@@ -9,7 +9,7 @@ import java.util.List;
 
 public interface PankGroupService {
     ResponsePankGroup getPankGroup(long id);
-    List<PankGroup> getAllPankGroups();
+    List<ResponsePankGroup> getAllPankGroups();
     PankGroup addPankGroup(RequestPankGroup requestPankGroup);
     void delPankGroup(long id);
     void updPankGroup(UpdateRequestPankGroup updateRequestPankGroup);

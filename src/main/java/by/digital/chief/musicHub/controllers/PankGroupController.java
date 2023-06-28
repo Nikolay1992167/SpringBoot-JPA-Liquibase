@@ -1,6 +1,7 @@
 package by.digital.chief.musicHub.controllers;
 
 import by.digital.chief.musicHub.dto.request.RequestPankGroup;
+import by.digital.chief.musicHub.dto.respons.ResponsePankGroup;
 import by.digital.chief.musicHub.dto.update.UpdateRequestPankGroup;
 import by.digital.chief.musicHub.entitie.PankGroup;
 import by.digital.chief.musicHub.services.PankGroupService;
@@ -17,7 +18,7 @@ public class PankGroupController {
     private final PankGroupService pankGroupServiceImpl;
 
     @GetMapping("/all")
-    public List<PankGroup> getAllPankGroups(){
+    public List<ResponsePankGroup> getAllPankGroups(){
         return pankGroupServiceImpl.getAllPankGroups();
     }
 

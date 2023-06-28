@@ -26,7 +26,7 @@ Content-Type: application/json
   "song": "Bhv",
   "composer": "Malok",
   "poet": "Genius",
-  "album": "Black"
+  "idAlbum": 2
 }
 
 ###updateSongPlayers
@@ -38,7 +38,7 @@ Content-Type: application/json
   "song": "Puky",
   "composer": "Mihalkov",
   "poet": "Stethkin",
-  "album": "Orange"
+  "idAlbum": 3
 }
 
 ###deleteSongPlayers

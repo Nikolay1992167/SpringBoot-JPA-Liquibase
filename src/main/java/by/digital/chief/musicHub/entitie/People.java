@@ -27,7 +27,7 @@ public class People {
     private String nationality;
     @Column(name = "stile")
     private String stile;
-    @ManyToOne(cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+    @ManyToOne(cascade = CascadeType.MERGE, fetch = FetchType.EAGER)
     private PankGroup pankGroup;
     @ManyToMany(fetch = FetchType.EAGER)
     @JoinTable(name = "people_songplayers",

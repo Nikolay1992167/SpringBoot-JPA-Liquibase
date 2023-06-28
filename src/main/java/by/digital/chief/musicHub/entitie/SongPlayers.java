@@ -25,7 +25,7 @@ public class SongPlayers {
     private String composer;
     @Column(name = "poet")
     private String poet;
-    @ManyToOne(cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+    @ManyToOne(cascade = CascadeType.MERGE, fetch = FetchType.EAGER)
     private Album album;
     @ManyToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
     @JoinTable(name = "people_songplayers",

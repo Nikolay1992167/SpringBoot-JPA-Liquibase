@@ -1,6 +1,7 @@
 package by.digital.chief.musicHub.services;
 
 import by.digital.chief.musicHub.dto.request.RequestPankGroup;
+import by.digital.chief.musicHub.dto.respons.ResponseAlbum;
 import by.digital.chief.musicHub.dto.respons.ResponsePankGroup;
 import by.digital.chief.musicHub.dto.update.UpdateRequestPankGroup;
 import by.digital.chief.musicHub.entitie.PankGroup;
@@ -26,8 +27,10 @@ public class PankGroupServiceImpl implements PankGroupService {
     }
 
     @Override
-    public List<PankGroup> getAllPankGroups() {
-        return pankGroupRepository.findAll();
+    public List<ResponsePankGroup> getAllPankGroups() {
+        ResponsePankGroup responsePankGroup = new ResponsePankGroup();
+        return responsePankGroup.getAllPankGroupResponseList(pankGroupRepository.findAll());
+
     }
 
     @Override
