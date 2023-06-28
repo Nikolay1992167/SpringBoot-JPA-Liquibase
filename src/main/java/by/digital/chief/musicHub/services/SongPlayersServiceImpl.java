@@ -8,6 +8,7 @@ import by.digital.chief.musicHub.entitie.People;
 import by.digital.chief.musicHub.entitie.SongPlayers;
 import by.digital.chief.musicHub.exeptions.ResourceNotFoundException;
 import by.digital.chief.musicHub.mapper.SongPlayersMapper;
+import by.digital.chief.musicHub.repositories.AlbumRepository;
 import by.digital.chief.musicHub.repositories.SongPlayersRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
@@ -20,6 +21,7 @@ import java.util.List;
 public class SongPlayersServiceImpl implements SongPlayersService {
     private final SongPlayersMapper songPlayersMapper;
     private final SongPlayersRepository songPlayersRepository;
+    private final AlbumRepository albumRepository;
 
     @Override
     public List<ResponseSongPlayers> getSongPlayers() {
@@ -95,7 +97,7 @@ public class SongPlayersServiceImpl implements SongPlayersService {
                     songPlayers.setSong(updateRequestSongPlayers.getSong());
                     songPlayers.setComposer(updateRequestSongPlayers.getComposer());
                     songPlayers.setPoet(updateRequestSongPlayers.getPoet());
-                    songPlayers.setAlbum(updateRequestSongPlayers.getAlbum());
+                    songPlayers.setAlbum(albumRepository.findById(updateRequestSongPlayers.getId()).orElseThrow(() -> new ResourceNotFoundException(String.format("Not found album!"))));
                     return songPlayers;
                 })
                 .orElseThrow(() -> new ResourceNotFoundException(String.format("Not find songplayers.")));

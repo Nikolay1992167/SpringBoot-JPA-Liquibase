@@ -17,7 +17,7 @@ import java.util.List;
 public class People {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "id")
+    @Column(name = "id", insertable=false, updatable=false)
     private long id;
     @Column(name = "human")
     private String human;
@@ -27,9 +27,12 @@ public class People {
     private String nationality;
     @Column(name = "stile")
     private String stile;
-    @ManyToOne(cascade = CascadeType.MERGE)
+    @ManyToOne(cascade = CascadeType.ALL, fetch = FetchType.LAZY)
     private PankGroup pankGroup;
-    @ManyToMany(mappedBy = "songInstrumentalist", fetch = FetchType.EAGER)
+    @ManyToMany(fetch = FetchType.EAGER)
+    @JoinTable(name = "people_songplayers",
+    joinColumns = @JoinColumn(name = "people_id"),
+    inverseJoinColumns = @JoinColumn(name = "songplayers_id"))
     private List<SongPlayers> songItems;
     public People(long id, String human){
         this.id = id;

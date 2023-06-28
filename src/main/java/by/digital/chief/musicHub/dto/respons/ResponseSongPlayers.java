@@ -22,22 +22,19 @@ public class ResponseSongPlayers {
     @Transactional
     public List<ResponseSongPlayers> getSongPlayersResponseList(List<SongPlayers> songPlayersList) {
         List<ResponseSongPlayers> responseSongPlayersList = new ArrayList<>();
-
         for (SongPlayers songPlayers : songPlayersList) {
             songInstrumentalistList = new ArrayList<>();
-
             ResponseSongPlayers responseSongPlayers = new ResponseSongPlayers();
             responseSongPlayers.setId(songPlayers.getId());
             responseSongPlayers.setSong(songPlayers.getSong());
             responseSongPlayers.setComposer(songPlayers.getComposer());
             responseSongPlayers.setPoet(songPlayers.getPoet());
-            responseSongPlayers.setAlbum(songPlayers.getAlbum());
-
+            responseSongPlayers.setAlbum((songPlayers.getAlbum()).getAlbum());
             for (People people : songPlayers.getSongInstrumentalist()) {
                 ResponsePeople responsePeople = new ResponsePeople();
                 responsePeople.setId(people.getId());
                 responsePeople.setHuman(people.getHuman());
-                responsePeople.setGroup(people.getPankGroup());
+                responsePeople.setGroup((people.getPankGroup()).getPankGroup());
                 songInstrumentalistList.add(responsePeople);
             }
             responseSongPlayers.setSongInstrumentalistList(songInstrumentalistList);

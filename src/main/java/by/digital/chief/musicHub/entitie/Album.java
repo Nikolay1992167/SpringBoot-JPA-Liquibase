@@ -17,11 +17,11 @@ import java.util.List;
 public class Album {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "id")
+    @Column(name = "id", insertable=false, updatable=false)
     private long id;
     @Column(name = "album")
     private String album;
-    @OneToMany(fetch = FetchType.EAGER)
+    @OneToMany(mappedBy = "album", fetch = FetchType.EAGER)
     private List<SongPlayers> songPlayersList;
 
 }

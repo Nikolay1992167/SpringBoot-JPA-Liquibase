@@ -18,7 +18,6 @@ public class UpdateRequestSongPlayers {
     @NotBlank
     @Size(max = 50)
     private String poet;
-    @NotBlank
-    @Size(max = 50)
-    private String album;
+    @NotNull
+    private Integer idAlbum;
 }

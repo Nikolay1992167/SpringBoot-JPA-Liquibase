@@ -18,6 +18,12 @@ public class AlbumServiceImpl implements AlbumService {
     private final AlbumMapper albumMapper;
     private final AlbumRepository albumRepository;
 
+    @Override
+    public ResponseAlbum getAlbum(long id) {
+        return albumRepository.findById(id)
+                .map(albumMapper::buildResponseAlbum)
+                .orElseThrow(() -> new ResourceNotFoundException(String.format("Can not find pankgroup with id %s", id)));
+    }
 
     @Override
     public List<ResponseAlbum> getAllAlbum() {

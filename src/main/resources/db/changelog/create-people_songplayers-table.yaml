@@ -1,0 +1,87 @@
+databaseChangeLog:
+  - changeSet:
+      id: create-albums_song_players_list
+      author: Nikolay
+      changes:
+        - createTable:
+            tableName: people_songplayers
+            columns:
+              - column:
+                  name: people_id
+                  type: integer
+              - column:
+                  name: songplayers_id
+                  type: integer
+  - changeSet:
+      id: add-fk-people-songplayers-1
+      author: Nikolay
+      changes:
+        - addForeignKeyConstraint:
+            baseColumnNames: people_id
+            baseTableName: people_songplayers
+            constraintName: song_people_1_fk
+            deferrable: false
+            initiallyDeferred: false
+            referencedColumnNames: id
+            referencedTableName: people
+  - changeSet:
+      id: add-fk-people-songplayers-2
+      author: Nikolay
+      changes:
+        - addForeignKeyConstraint:
+            baseColumnNames: songplayers_id
+            baseTableName: people_songplayers
+            constraintName: song_people_2_fk
+            deferrable: false
+            initiallyDeferred: false
+            referencedColumnNames: id
+            referencedTableName: songplayers
+  - changeSet:
+      id: insert-songplayers_song_instrumentalist
+      author: Nikolay
+      changes:
+        - insert:
+            tableName: people_songplayers
+            columns:
+              - column:
+                  name: people_id
+                  value: '1'
+              - column:
+                  name: songplayers_id
+                  value: '3'
+        - insert:
+            tableName: people_songplayers
+            columns:
+              - column:
+                  name: people_id
+                  value: '2'
+              - column:
+                  name: songplayers_id
+                  value: '2'
+        - insert:
+            tableName: people_songplayers
+            columns:
+              - column:
+                  name: people_id
+                  value: '3'
+              - column:
+                  name: songplayers_id
+                  value: '3'
+        - insert:
+            tableName: people_songplayers
+            columns:
+              - column:
+                  name: people_id
+                  value: '4'
+              - column:
+                  name: songplayers_id
+                  value: '1'
+        - insert:
+            tableName: people_songplayers
+            columns:
+              - column:
+                  name: people_id
+                  value: '5'
+              - column:
+                  name: songplayers_id
+                  value: '5'

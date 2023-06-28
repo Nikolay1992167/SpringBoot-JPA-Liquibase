@@ -31,10 +31,10 @@ public class PeopleServiceImpl implements PeopleService{
     }
 
     @Override
-    public List<PankGroup> getByHuman(String human) {
+    public List<String> getByHuman(String human) {
         ResponsePeople responsePeople = new ResponsePeople();
         List<ResponsePeople> peopleList = responsePeople.getPeopleResponseList(peopleRepository.searchByHuman(human));
-        List<PankGroup> pankGroups = new ArrayList<>();
+        List<String> pankGroups = new ArrayList<>();
         for (ResponsePeople people : peopleList) {
             pankGroups.add(people.getGroup());
         }

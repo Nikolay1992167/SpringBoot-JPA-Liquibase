@@ -25,9 +25,12 @@ public class SongPlayers {
     private String composer;
     @Column(name = "poet")
     private String poet;
-    @Column(name = "album")
-    private String album;
+    @ManyToOne(cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+    private Album album;
     @ManyToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
+    @JoinTable(name = "people_songplayers",
+            joinColumns = @JoinColumn(name = "songplayers_id"),
+            inverseJoinColumns = @JoinColumn(name = "people_id"))
     private List<People> songInstrumentalist;
     public SongPlayers(long id, String song){
         this.id = id;

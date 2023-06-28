@@ -42,7 +42,7 @@ databaseChangeLog:
       author: Nikolay
       changes:
         - addForeignKeyConstraint:
-            baseColumnNames: id
+            baseColumnNames: pank_group_id
             baseTableName: people
             constraintName: people_groups_fk
             deferrable: false

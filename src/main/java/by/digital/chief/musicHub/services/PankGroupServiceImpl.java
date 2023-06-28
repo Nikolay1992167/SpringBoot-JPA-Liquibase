@@ -22,7 +22,7 @@ public class PankGroupServiceImpl implements PankGroupService {
     public ResponsePankGroup getPankGroup(long id) {
         return pankGroupRepository.findById(id)
                 .map(pankGroupMapper::buildPankGroupResponse)
-                .orElseThrow(() -> new ResourceNotFoundException(String.format("Can not find product with id %s", id)));
+                .orElseThrow(() -> new ResourceNotFoundException(String.format("Can not find pankgroup with id %s", id)));
     }
 
     @Override

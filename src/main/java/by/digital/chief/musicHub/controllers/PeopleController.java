@@ -25,7 +25,7 @@ public class PeopleController{
     }
 
     @GetMapping("/getbyhuman/{human}")
-    public List<PankGroup> getByHuman(@PathVariable String human) {
+    public List<String> getByHuman(@PathVariable String human) {
         return peopleServiceImpl.getByHuman(human);
     }
 

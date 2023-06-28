@@ -30,10 +30,20 @@ databaseChangeLog:
                   constraints:
                     nullable: false
               - column:
-                  name: album
-                  type: varchar(50)
-                  constraints:
-                    nullable: false
+                  name: album_id
+                  type: integer
+  - changeSet:
+      id: add-fk-songplayers
+      author: Nikolay
+      changes:
+        - addForeignKeyConstraint:
+            baseColumnNames: album_id
+            baseTableName: songplayers
+            constraintName: songplayers_album_fk
+            deferrable: false
+            initiallyDeferred: false
+            referencedColumnNames: id
+            referencedTableName: albums
   - changeSet:
       id: insert-songplayers
       author: Nikolay
@@ -51,8 +61,8 @@ databaseChangeLog:
                   name: poet
                   value: Tishman
               - column:
-                  name: album
-                  value: Black
+                  name: album_id
+                  value: '2'
         - insert:
             tableName: songplayers
             columns:
@@ -66,8 +76,8 @@ databaseChangeLog:
                   name: poet
                   value: Tishman
               - column:
-                  name: album
-                  value: Red
+                  name: album_id
+                  value: '1'
         - insert:
             tableName: songplayers
             columns:
@@ -81,8 +91,8 @@ databaseChangeLog:
                   name: poet
                   value: Grody
               - column:
-                  name: album
-                  value: Gray
+                  name: album_id
+                  value: '4'
         - insert:
             tableName: songplayers
             columns:
@@ -96,8 +106,8 @@ databaseChangeLog:
                   name: poet
                   value: Bulka
               - column:
-                  name: album
-                  value: Red
+                  name: album_id
+                  value: '5'
         - insert:
             tableName: songplayers
             columns:
@@ -111,5 +121,5 @@ databaseChangeLog:
                   name: poet
                   value: Grody
               - column:
-                  name: album
-                  value: Gray
+                  name: album_id
+                  value: '2'

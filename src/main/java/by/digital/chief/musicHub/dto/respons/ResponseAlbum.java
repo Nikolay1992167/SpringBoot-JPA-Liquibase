@@ -2,7 +2,10 @@ package by.digital.chief.musicHub.dto.respons;
 
 import by.digital.chief.musicHub.entitie.Album;
 import by.digital.chief.musicHub.entitie.SongPlayers;
+import lombok.AllArgsConstructor;
+import lombok.Builder;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 import org.springframework.transaction.annotation.EnableTransactionManagement;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -10,7 +13,10 @@ import java.util.ArrayList;
 import java.util.List;
 
 @Data
+@Builder
 @EnableTransactionManagement
+@AllArgsConstructor
+@NoArgsConstructor
 public class ResponseAlbum {
     private long id;
     private String album;
@@ -31,7 +37,7 @@ public class ResponseAlbum {
                 responseSongPlayers.setId(songPlayers.getId());
                 responseSongPlayers.setSong(songPlayers.getSong());
                 responseSongPlayers.setComposer(songPlayers.getComposer());
-                responseSongPlayers.setAlbum(songPlayers.getAlbum());
+                responseSongPlayers.setAlbum((songPlayers.getAlbum()).getAlbum());
                 responseSongPlayers.setPoet(songPlayers.getPoet());
                 songPlayersList.add(responseSongPlayers);
             }

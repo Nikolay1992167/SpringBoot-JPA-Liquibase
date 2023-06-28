@@ -8,8 +8,13 @@ import by.digital.chief.musicHub.entitie.Album;
 import java.util.List;
 
 public interface AlbumService {
+    ResponseAlbum getAlbum(long id);
+
     List<ResponseAlbum> getAllAlbum();
+
     Album addAlbum(RequestAlbum requestAlbum);
-    void delAlbum(long id );
+
+    void delAlbum(long id);
+
     void updAlbum(UpdateRequestAlbum updateRequestAlbum);
 }

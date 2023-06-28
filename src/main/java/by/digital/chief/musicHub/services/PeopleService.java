@@ -11,7 +11,7 @@ import java.util.List;
 
 public interface PeopleService {
     List<ResponsePeople> getAllPeople();
-    List<PankGroup> getByHuman(String human);
+    List<String> getByHuman(String human);
     List<SongPlayers> getSongByHuman(String human);
     People addPeople(RequestPeople requestPeople);
     void updPeople(UpdateRequestPeople updateRequestPeople);

@@ -1,6 +1,7 @@
 package by.digital.chief.musicHub.mapper;
 
 import by.digital.chief.musicHub.dto.request.RequestAlbum;
+import by.digital.chief.musicHub.dto.respons.ResponseAlbum;
 import by.digital.chief.musicHub.entitie.Album;
 import lombok.Builder;
 import lombok.Data;
@@ -13,6 +14,20 @@ public class AlbumMapper {
     public Album buildAlbum(RequestAlbum requestAlbum) {
         return Album.builder()
                 .album(requestAlbum.getAlbum())
+                .build();
+    }
+
+    public ResponseAlbum buildResponseAlbum(Album album){
+        return ResponseAlbum.builder()
+                .id(album.getId())
+                .album(album.getAlbum())
+                .build();
+    }
+
+    public Album buildAlbum(ResponseAlbum responseAlbum) {
+        return Album.builder()
+                .id(responseAlbum.getId())
+                .album(responseAlbum.getAlbum())
                 .build();
     }
 }
