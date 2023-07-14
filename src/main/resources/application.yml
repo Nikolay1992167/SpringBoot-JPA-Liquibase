@@ -1,5 +1,7 @@
 #SPRING CONFIGURATION
 spring:
+  profiles:
+    default:
   liquibase:
     enabled: true
   mvc:
@@ -9,7 +11,7 @@ spring:
     jdbc:
       initialize-schema: always
   application:
-    name: Truck
+    name: MusicHub
   datasource:
     url: jdbc:postgresql://127.0.0.1:5432/MusicHub
     driver-class-name: org.postgresql.Driver
@@ -19,16 +21,16 @@ spring:
       maximum-pool-size: 10
   jpa:
     hibernate:
-      ddl-auto: none
+      ddl-auto: update
     database-platform: org.hibernate.dialect.PostgreSQLDialect
     show-sql: true
     database: postgresql
     open-in-view: false
-    generate-ddl: false
+    generate-ddl: true
     defer-datasource-initialization: false
 #SERVER
 server:
-  port: 8080
+  port: 8181
   error:
     include-message: always
     include-binding-errors: always
