@@ -1,12 +1,23 @@
-version: 2.19.0
+version: '2.19.0'
 
 services:
-  db:
-    image: 'postgres:13-alpine'
-    restart: always
-    ports:
-    - "5432:5432"
+  app:
+    build:
+      context: .
+    container_name: musichub
+    depends_on:
+      - db
     environment:
-      POSTGRES_USERNAME: postgres
-      POSTGRES_PASSWORD: 87654321
-      POSTGRES_DB: Musik
+      - SPRING_DATASOURCE_URL=jdbc:postgresql://db:5433/MusicHub
+      - SPRING_DATASOURCE_USERNAME=postgres
+      - SPRING_DATASOURCE_PASSWORD=87654321
+    ports:
+      - '8080:8080'
+
+  db:
+    image: postgres:15.1-alpine
+    container_name: postgresmusic
+    environment:
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=87654321
+      - POSTGRES_DB=MusicHub
